@@ -25,8 +25,11 @@ jobs:
       - name: Removing previous chrome instances on runner 
         run: |
            sudo apt purge google-chrome-stable  
+           curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+           sudo dpkg -i google-chrome-stable_current_amd64.deb
+           google-chrome --version
            sudo chmod +x bin/v2ray
-        
+                 
       - name: Running the Python script
         run: |
            #curl -L ${{ secrets.KY_GITHUB_URL }} > bin/ky-github.json && bin/v2ray -config bin/ky-github.json & sleep 2 && python run.py
