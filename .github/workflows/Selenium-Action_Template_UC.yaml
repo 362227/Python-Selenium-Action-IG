@@ -24,7 +24,7 @@ jobs:
         
       - name: Removing previous chrome instances on runner 
         run: |
-           sudo apt purge google-chrome-stable
+           sudo apt purge google-chrome-stable && rm -rf 362227*.zip        
            curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
            sudo dpkg -i google-chrome-stable_current_amd64.deb
            google-chrome --version
